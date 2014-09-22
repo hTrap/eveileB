@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ME Documentation</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript" src="toc.js"></script>
+	</head>
+	<body>
+		<div id="menu">
+			<div class="logo">
+				<img src="images/logo.png"/>
+			</div>
+			<div id="toc">
+		
+			</div>
+		</div>
+		<div id="wrapper">
+			<h2>Overview</h2>
+			<p>ME is a multifunctional, incredibly configurable Drupal theme which inherits its functionality from the CMS Superhero base theme. This theme provides tools to manage the full page layout of the site, the colour presets to use within the site and many other features to create sites of any kind.</p>
+			
+			<!-- Package Structure -->
+			<h2>Package Contents</h2>
+			<table>
+				<thead>
+					<th>Folder</th>
+					<th align="left">Description</th>
+				</thead>
+				<tbody>
+					<tr><td><img src="images/assetsfolder.png"/></td><td>Graphical Contents</td></tr>
+					<tr><td><img src="images/demofolder.png"/></td><td>Demo Package install</td></tr>
+					<tr><td><img src="images/docsfolder.png"/></td><td>Documentation</td></tr>
+					<tr><td><img src="images/extrafolder.png"/></td><td>Files and folders used for installing theme only and other information and content you might need.</td></tr>
+					<tr><td><img src="images/licensesfolder.png"/></td><td>Contains licenses for Drupal and included premium modules.</td></tr>
+				</tbody>
+			</table>
+			
+			<!-- Installation -->
+			<h2>Installation</h2>
+			
+			<div class="note">Note: It is important for any installation of the ME theme to also have the Superhero theme also in the sites theme folder, as this provides all theme functionality. It is also important to install the Superhero Theme module as this provides the admin tools for the backend of the theme.</div>
+			
+			<h3>Installation Profile</h3>
+			<p>Provided with this package is a Drupal install profile (called Superhero) which is used to quickly install new sites with the ME theme. This profile will install all required modules and setup the ME theme as the enabled theme.</p>
+			<p>To install ME using the profile do the following:</p>
+			<ol>
+				<li>Create a new empty database in your phpmyadmin/cPanel tools and create database user.</li>
+				<li>Download the latest version of Drupal 7 from <a href="https://drupal.org/project/drupal" target="_blank">Drupal.org</a></li>
+				<li>Move your Drupal 7 folder contents to your site location.</li>
+				<li>Copy the Superhero profile folder located in the ME package (Extra/profiles) into your sites profiles folder.</li>
+				<li>Visit the site URL that your files belong to and you will see the page shown below:</li>
+			<div class="center" style="margin-top:10px;">
+				<img src="images/profile.png"/>
+			</div>
+				<li>The Superhero radio button should already be selected. If not make sure it is.</li>
+				<li>Install Drupal normally making sure database credentials match those you created at Step 1.</li>
+				<li>Once installed go to configuration > jQuery Update and set the version to at least 1.7.</li>
+			</ol>
+			
+			<h3>Theme Only</h3>
+			<p>The following explains how to install the theme with existing sites. In order to do this there are several steps that must be completed.</p>
+			<ol>
+				<li>Copy both the ME and Superhero themes (located in your ME package at Extra/themes) into your sites theme directory (sites/all/themes).</li>
+				<li>Copy the module folders located in your ME package at Extra/modules into your sites 'sites/all/modules' folder.</li>
+				<div class="note" style="margin-top:10px;">
+					NOTE: The ME package contains the modules (in Extra/modules) in 3 folders which are contrib, premium and superhero_framework. The contrib folder contains all the modules that are used within the site that are available from drupal.org. Please only copy the modules from the ME package that you have not already installed on your site. E.g. if you have already installed Views do not copy this into your sites/all/modules folder.
+				</div>
+				<li>Install and enable at least the "Superhero Theme" module from within your site.
+					<img src="images/theme-only-step-1.jpg"/><br/>
+					 The jQuery Update will be required to install. Click "Continue".
+					<img src="images/theme-only-step-2.jpg"/>
+				</li>
+				<li>Make sure that at least jQuery version 1.7 is installed using jQuery Update module settings at Configuration > jQuery Update.<br/>
+					<img src="images/theme-only-step3.jpg"/>
+				</li>
+				<li>Enable the ME theme from Appearance menu.<br/>
+					<img src="images/theme-only-step4.jpg"/>
+				</li>
+				<li>Once enabled you can configure the theme using the theme settings under Appearance.</li>
+			</ol>
+			<div class="note">
+				NOTE: This method does not require you to import or remove any data from your database. Please do not use the database.zip file for this method of install.
+			</div>
+			
+			<h3>Demo Install</h3>
+			<p>Provided with the package is a copy of the full demo site with the sql database. In order to use this you follow the below steps.</p>
+			<ol>
+				<li>Create a new database in your phpmyadmin/cPanel tools and create database user.</li>
+				<li>Import the supplied database sql zip file (located in Extra folder) into this database.<br /><br />
+				<img src="images/step1-demo.JPG" width="75%" /><br /><br />
+				</li>
+				<li>Copy the Demo folder contents into your site folder.<br /><br />
+				<img src="images/step2-demo.JPG" width="75%" /><br /><br />	
+				</li>
+				<li>Change the details in sites/default/settings.php to match the database name, user and password for your new created database.<br /><br />
+				<img src="images/step3-demo.JPG" width="75%" /><br /><br />	
+				</li>
+				<li>Admin account: username: admin, password: admin.</li>
+			</ol>
+			
+			<!-- Modules -->
+			<h3>Modules</h3>
+			<p>The install profile provides all contributed and Superhero modules required to create the ME demo site and your own customised website using the ME template. The template uses modules for customised functionality, such as animated blocks, image slideshows, portfolio pages etc.</p>
+						
+			<p>In order for CMS Superhero sub themes to work correctly, the following modules are required.</p>
+			<ul class="required-mods">
+				<li><a href="https://drupal.org/project/jquery_update" target="_blank">jQuery Update</a> - Configure to at least version 1.7</li>
+				<li><a href="https://drupal.org/project/ctools" target="_blank">Chaos Tools</a></li>
+				<li><a href="https://drupal.org/project/views" target="_blank">Views</a></li>
+				<li>Superhero Theme</li>
+			</ul>
+			
+			<!-- Page Builder -->
+			<h2>Page Builder</h2>
+			<p>Superhero sub themes such as ME provide a complete page builder which allows you to manage manually the layout of your website using simple drag and drop tools. Using these tools you can specify the order of sections and regions; the widths of individual block regions; move regions to specific sections or remove from the site layout entirely.</p>
+			<div class="center">
+				<img src="images/pagebuilder.png" width="75%"/>
+			</div>
+			<p>The above shows the page builder available in the backend of your theme when visiting Appearance > ME > Settings. Using the cross arrow icons, you can drag and drop the sections such as Content, Preface etc. vertically to place them wherever you would like them in your website work flow. Or you can use the same arrows per region, within each section, to change the order at which they are rendered.</p>
+			<p>For example, if you want your strapline to appear above your feature but also want your logo rendered before your menu, you can drag the strapline section above the feature and drag the logo before the menu (in the header section) and save the settings. Saving these settings will automatically apply these changes when you view the front end of your site.</p>
+			<BR />
+			<div class="row clearfix">
+				<div style="width:60%">
+					<p>By clicking the gear icon on each region you can manage additional settings specific to each region. These settings are:</p>
+					<ul>
+						<li>The section the region belongs too.</li>
+						<li>The width of the region.</li>
+						<li>Whether to force the region to be rendered even if empty.</li>
+					</ul>
+					<h4>Section setting</h4>
+					<p>This allows you to move the region to another section.</p>
+					<p>If set to 'none' the region will be moved to the unassigned section at the bottom of the page builder. This allows you to remove regions from being displayed on the site, even if the region is not empty.</p>
+					<h4>Width setting</h4>
+					<p>Based on Twitter Bootstraps 12 column system, you can specify the width of each section. This means that all regions within each section of the theme should add up to 12. Say for example you want a 3 column layout for a section, you would set each width to 'span4'.</p>
+					<p>Now integrated with Bootstrap 3 and its new and improved column system, column widths can now be set on a per screen display. For example a large desktop screen size can have a region be 10 columns wide but on a tablet only be 7 columns. This gives greater flexibility for design and layout of your website.</p>
+					<h4>Force Setting</h4>
+					<p>This is used to specify that the region should be rendered on the front end, even if no blocks or content is present in the region.</p>
+				</div>
+				<div style="width:40%">
+					<img src="images/sectionpopup.png"/>
+				</div>
+			</div>
+			
+			<!-- Section Settings -->
+			<h2>Section Settings</h2>
+			<p>Each individual section of the website can be further customised through the Section Settings tab in the theme settings. This allows you to make sections full width, make them sticky and also add bootstrap classes to determine responsive visibility.</p>
+			<div class="row clearfix">
+				<div style="width: 70%">
+					<p>The Full Width setting provides the ability to make sections into a full width responsive layout, so that the content will be the full width of the browser. In ME this is used by default for the feature section as this contains a full width image slideshow.</p>
+				</div>
+				<div style="width: 30%">
+					<img src="images/fullwidth.png"/>
+				</div>
+			</div>
+			<BR />
+			<div class="row clearfix">
+				<div style="width:70%">
+					<div class="note">
+						Note: Must only be used for the section at the top of the layout.
+					</div>
+					<p>Specifically used for the top section of the design this allows you to make the section stick to the top of the screen permanently per page. In ME this is used for the header section.</p>
+				</div>
+				<div style="width:30%">
+					<img src="images/sticky.png"/>
+				</div>
+			</div>
+			<BR />
+			<div class="row clearfix">
+				<div style="width: 70%">
+					<p>Each section also includes custom style settings. Using the colour picker, individual sections can have a background colour applied to them, without requiring any use of CSS. A margin and padding can also be applied to further configure the section without any coding knowledge.</p>
+				</div>
+				<div style="width: 30%">
+					<img src="images/sectionstyle.png"/>
+				</div>
+			</div>
+			<BR />
+			<div class="row clearfix">
+				<div style="width: 70%">
+					<p>As the Base theme integrates Twitter Bootstrap, it allows you to append responsive classes to each section to control the sections visibility based on the browser size. </p>
+				</div>
+				<div style="width: 30%">
+					<img src="images/responsivesettings.png"/>
+				</div>
+			</div>
+			
+			<!-- Presets -->
+			<h2>Presets</h2>
+			<p>By default several colour presets are provided by the theme so that you can easily change the colour scheme of the website.</p>
+			<div class="center">
+				<img src="images/presets.png"/>
+			</div>
+			<p>The preset tools allow you to easily select the preset you wish to use and also provides the functionality to create your own so that you can have full control over the colour scheme of your website. Once you have clicked the coloured box of the preset you wish to use you can then set it as the default by clicking the radio button below it. Once you click save you will then change the current preset of the site. The system works this way so that you can customise the individual colours of presets before setting it as the default.</p>
+			
+			<!-- Basic Settings -->
+			<h2>Other Settings</h2>
+			<div class="row clearfix">
+				<div style="width:70%">
+					<p>The settings under the Basic tab specify the global site wide layout settings of the site. The Responsive setting sets whether the site will be responsive or not, if for example your site does not require responsive layouts.</p>
+					<p>The layout style setting determines whether the site will be a boxed layout centred in the browser or if the site utilises the wide layout (default). The wide layout makes the site full width.</p>
+					<p>The theme direction allows your theme to rearrange the site for a different reading style. LTR refers to 'left to right' reading while RTL refers to 'right to left'.</p>
+				</div>
+				<div style="width:30%">
+					<img src="images/basic.png"/>
+				</div>
+			</div>
+			
+			<!-- Delta -->
+			<h2>Delta</h2>
+			<p>Even though ME has a large list of customisation options, the theme can be further customised using the Delta Module. In its simplest form, Delta allows you to customise all the theme settings mentioned above for specific pages, or pages that match specific rules. This means that you can create for example multiple different homepage layouts, by creating a delta for each one and using the Page Builder mentioned earlier to completely reconfigure region positions and settings. </p>
+			<p>In order to use delta the following modules are required:</p>
+			<ul>
+				<li><a href="https://drupal.org/project/context" target="_blank">Context</a></li>
+				<li><a href="https://drupal.org/project/delta" target="_blank">Delta</a></li>
+			</ul>
+			<p>Once installed the first thing to do is to create your delta for the page you wish to customise. You can do this by going to Appearance > Delta. Once here you click on 'Add' which will show the below form.</p>
+			<BR />
+			<div class="center">
+				<img src="images/deltacreate.png"/>
+			</div>
+			<p>Fill in the form and make sure that the Theme is set to ME. We also recommend that you set the Operation mode to 'Only override different values'. This is the most efficient.</p>
+			<div class="center">
+				<img src="images/deltalist.png"/>
+			</div>
+			<p>Once created you will be returned to your list of deltas. The above image shows an example of the deltas used on the demo site. Once created you can begin to configure all the theme settings for this delta by clicking on 'Configure' on your new created delta. The configure setting provides all the theme settings that belong to ME however will only be applied on pages that are set to use it.</p>
+			<p>In order to use these new delta settings on your site you need to create a Context by going to Structure > Context.</p>
+			<p>Contexts are a set of actions that are carried out when specific conditions are met. In the case of Delta, the action carried out is the page will use all the theme settings specified in your new Delta, however, the condition can be whatever you like.</p>
+			<p>The below form shows the creation of a context which will allow you to assign your Delta theme settings to a specific path. In this case it is only applying a delta when the path matches the 'front' page. This means that the home page will have different settings to the main settings of the site.</p>
+			<div class="center">
+				<img src="images/deltacontext.png"/>
+			</div>
+			<p>The important parts of this are the conditions and the reactions. To apply a Delta you select 'Delta' from the list of reaction types. Once selected a list of all available Deltas will be visible (like above) so that you can select which one to use. The condition in this case is set to apply only when a path matches that set, however, this could easilly be set to specific node types or for specific user roles only etc.</p>
+			<p>Once saved, the page that matches the conditions set will utilise the Delta you specified. If you ever need to update the theme settings you can just update the specific delta being used by going to 'Configure' on the Appearance > Delta page.</p>
+			
+			
+			<!-- Custom functionality -->
+			<h2>Superhero Modules</h2>
+			<p>Included in the install profile and in the demo install are modules created specifically for Superhero sub themes. These modules greatly increase the functionality options of your website.</p>
+			
+			<!-- Superhero Theme -->
+			<h3>Superhero Theme</h3>
+			<div class="note">
+				This is a helper module used for Superhero base themes. It is used to provide the drag and drop tools and format the backend of the theme settings to make it easier to use.
+			</div>
+			
+			<!-- Superhero Block -->
+			<h3>Superhero Block</h3>
+			<p>The Superhero Block module allows any block in the system to utilise colour/image backgrounds and animate the content using CSS3 animations. The animations are used in combination with the jQuery appear plugin to allow animations to take place when the user scrolls to the block. Image backgrounds can also be used as Parallax scrolling backgrounds by using the Stellar.js plugin.</p>
+			<h4>Requirements</h4>
+			<ul>
+				<li><a href="https://drupal.org/project/libraries" target="_blank">Libraries Module</a></li>
+				<li><a href="https://drupal.org/project/media" target="_blank">Media Module</a></li>
+				<li><a href="http://markdalgleish.com/projects/stellar.js/" target="_blank">Stellar.js</a> - put in directory as sites/all/libraries/stellar.js</li>
+				<li>Animate.css</li>
+				<li>jQuery.appear.js</li>
+
+			</ul>
+			<div class="note">
+				Note: The ME Theme by default has the main files for animate.css and jquery.appear.js
+			</div>
+			<p>The use of the libraries module means that the files for Stellar.js can be placed in the libraries directory and can be independent of the module, therefore can easily be updated.</p>
+			<div class="row clearfix">
+				<div style="width:65%">
+					<p>Once installed the Superhero block module provides a new fieldset in the form of every configurable block on your Drupal site. Using the options available in this fieldset you can customise the appearance and the appear effects of blocks to make them animated and add backgrounds and background effects to them.</p>
+					<p>The animation option allows you to specify the type of animation that the block will do when the block is viewed by the user on the front end. It is integrated with the effects provided by Animate.css, a third party, incredibly useful library. You can also specify the duration of the animation which will overwrite the default 1 second duration.</p>
+				</div>
+				<div style="width:35%">
+					<img src="images/blockmain.png"/>
+				</div>
+			</div>
+			<BR />
+			<div class="row clearfix">
+				<div style="width:65%">
+					<p>The background type settings allow you to specify the type of background that the block can have. The three available types are having a Colour background, an image background or no background at all. The colour option allows you to specify a hexadecimal value for the colour at which the background will be such as #FF0000 (red). This allows you to set a colour for the background of the block without requiring you to set the colour in css.</p>
+				</div>
+				<div style="width:35%">
+					<img src="images/blockcolour.png"/>
+				</div>
+			</div>
+			<BR />
+			<div class="center">
+				<img src="images/blockimage.png"/>
+			</div>
+			<p>The image background type allows you to add an image as the background of the block and has two options, Fixed and Parallax. Integrated with the Media module you can easily select and insert an image which will be used for the background of the block.</p>
+			<p>Parallax backgrounds are image backgrounds where the image scrolls at a different rate to the window scroll, which further increases the aesthetic of your website. You can determine this rate by setting the Parallax Ratio.</p>
+			<p>You can also specify a top and bottom padding for the block which is especially useful for blocks with limited content using Parallax backgrounds.</p>
+		
+			<!-- Superhero Portfolio -->
+			<h3>Superhero Portfolio</h3>
+			<p>The Superhero Portfolio module has been created to allow dynamic portfolio pages to be created quickly and easily. Built upon jQuery Isotope and integrated with Drupal Views module, the module provides an excellent starting point for those who want to build a portfolio.</p>
+			<p>Example:</p>
+			<div class="center">
+				<img src="images/portfront.png" width="65%"/>
+			</div>
+			<h4>Requirements</h4>
+			<ul>
+				<li><a href="https://drupal.org/project/libraries" target="_blank">Libraries Module</a></li>
+				<li><a href="https://drupal.org/project/views" target="_blank">Views Module</a></li>
+				<li><a href="http://isotope.metafizzy.co/" target="_blank">jQuery Isotope Plugin</a></li>
+			</ul>
+			<div class="note">
+				Note: The jQuery isotope library is provided in the libraries folder for the ME install. It is an incredibly useful premium plugin which files must be placed in sites/all/libraries/isotope.
+			</div>
+			<p>The module provides the following features on install.</p>
+			<ul>
+				<li>A Portfolio content type</li>
+				<li>Portfolio fields for use with the content type</li>
+				<li>A superhero portfolio view mode for content types</li>
+				<li>A taxonomy vocabulary to assign to portfolio items (used for the filter)</li>
+				<li>A View with 3 page view displays with settings</li>
+				<li>A standard template to be used for each item in the portfolio view</li>
+				<li>A configurable image style for portfolio images</li>
+			</ul>
+			<!-- Install from scratch -->
+			<p>The Superhero Portfolio module provides an incredibly quick way to get started from scratch with portfolios by providing all the necessary components required to construct a filterable Portfolio. Once installed the module will provide a content type to use 3 default page views and a taxonomy vocabulary to be used with your new content type.</p>
+			<p>First thing to do is to create your categories which will be used to identify the type of work that your portfolio content can fall under and can also be used to filter the list of results. The created taxonomy vocabulary is 'Portfolio Categories'</p>
+			<div class="center">
+				<img src="images/portfoliotax.png"/>
+			</div>
+			<p>The above shows the categories available from the demo install. This list of categories will be used to categorise the portfolio content and be used for the dynamic filter on the portfolio page. The 'Show All' filter on the portfolio page will be added automatically.</p>
+			<p>Also provided by the module is a 'Superhero Portfolio' content type. This automatically has fields for a portfolio image and a term reference field to the 'Portfolio Categories' taxonomy vocabulary that you have just added categories too.</p>
+			<img src="images/portfoliotype.png"/>
+			<p>Once you have added content of type 'Superhero Portfolio' you can then use the page displays provided by Views, shown below:</p>
+			<img src="images/portview.png"/>
+			<p>This view provides 3 page displays by default each to reflect the number of possible columns your portfolio can contain.</p>
+			<div class="row clearfix">
+				<div style="width:65%">
+					<p>The Superhero Portfolio module Views also utilise a bespoke format style (shown above) called 'Superhero Portfolio'. This provides custom settings specific to creating the portfolio. This includes the number of columns, whether to use a filter, and what taxonomy vocabulary to use for the filter. As you may have guessed the three portfolio displays created by this view will each have a different value for the 'Number of Columns' setting.</p>
+				</div>
+				<div style="width:35%">
+					<img src="images/portviewsettings.png"/>
+				</div>
+			</div>
+			<BR />
+			<div class="note">
+				Note: It is vital that the content type to be displayed has a taxonomy term reference field linked to the chosen setting, otherwise the filter will not work. It is important to use the 'Portfolio Categories' taxonomy vocabulary for the Superhero Portfolio content type. This setting exists if you wish to use the portfolio display type for content of different types.
+			</div>
+			<p>Once the portfolio format style settings have been set, you can then set up a filter on the views to filter by Superhero Portfolio content type. After this has been set, your portfolio pages will be ready to use.</p>
+			
+			<h4>Extra</h4>
+			<p>By default the portfolio views use a bespoke view mode called Superhero Portfolio which utilises a custom image style to set up a standard size for the Portfolio images as seen under (manage display). Both the image style and the view mode template can be changed so that you can change the layout of each portfolio item to whatever you like.</p>
+			<p>The default template for this view mode can be located in the Superhero Portfolio module.</p>
+			</p><strong>superhero_portfolio/theme/node--view--superhero_portfolio.tpl.php</strong></p>
+			<p>You can copy this to your theme directory and overwrite if you wish.</p></p>
+			
+			<!-- Superhero Shortcode -->
+			<h3>Superhero Shortcode</h3>
+			<p>The Superhero Shortcodes module integrates with the Shortcodes API module to add an assortment of shortcodes which can be used in textareas across the site which will automatically generate the markup around whatever content you wish to encapsulate in an accordion, carousel etc.</p>
+			<h4>Enabling Shortcodes</h4>
+			<p>First thing to do to enable shortcodes is to enable to Shortcodes API Module and also the Superhero Shortcode Module.</p>
+			<div class="row clearfix">
+				<div style="width:65%">
+					<p>Through the use of the Shortcodes API module. The available shortcodes can be activated by going to Configuration > Text Formats > Full HTML > Configure. Once here you need to enable the Shortcodes filter. This will enable the module filter to be able to setup available shortcodes.</p>
+				</div>
+				<div style="width:35%">
+					<img style="margin-top:10px;" src="images/shortcodesenable.png"/>
+				</div>
+			</div>
+			<BR />
+			<div class="row clearfix">
+				<div style="width:50%;">
+					<p>Once the Shortcode filter is enabled you can view all available shortcodes under Filter settings. From here you can individually enable which shortcodes you wish to use. Once enabled you can use them in your node forms. Please be aware though, that the shortcodes will only work when the text format is Full HTML.</p>
+				</div>
+				<div style="width:50%; text-align:right;">
+					<img src="images/shortcodes.png"/>
+				</div>
+			</div>
+			<BR />
+						
+			<!-- Shortcodes -->
+			<!-- Columns -->
+			<h4>Columns</h4>
+			<div class="row clearfix">
+				<div style="width:50%">
+					<p>The example on the right shows an example of the column shortcode in use. This is implemented using the following:</p>
+<pre>
+	[row]
+		[col class="span4"]Column 1 Content[/col]
+		[col class="span4"]Column 2 Content[/col]
+		[col class="span4"]Column 3 Content[/col]
+	[/row]
+</pre>
+					<p>This uses both the Row and Column Shortcode to define a single row with 3 columns each with a width of 4 columns. As the shortcode module works with Twitter Bootstrap, the total number of columns available is 12 and therefore in this case, each column is a third of the width of the row.</p>
+					<p>Using this shortcode combination you can vary the widths and numbers of and widths of each column within a row.</p>
+				</div>
+
+				<div style="width:50%">
+					<img src="images/shortcodecols.png"/>
+				</div>
+			</div>
+			<BR />
+			
+			<!-- Alerts -->
+			<h4>Alerts</h4>
+			<div class="row clearfix">
+				<div style="width: 50%">
+					<p>The examples on the right show the alert shortcode with the numerous different versions of alert that can be created using the shortcode.</p>
+					<code>
+						[alert type="success"]<br />
+							Success<br />
+							Well done! You successfully read this important alert message.<br/>
+						[/alert]
+					</code>
+					<p>The code above shows how to create the top green coloured alert. It is simply the shortcode with type set to success. The other types available are: ('warning','error' and 'info').</p>
+				</div>
+				<div style="width:50%">
+					<img src="images/shortcodealert.png"/>
+				</div>
+			</div>
+			<BR />
+			
+			<!-- Accordion -->
+			<h4>Accordion</h4>
+			<div class="row clearfix">
+				<div style="width:50%">
+					<p>The example on the left is an example of the accordion and accordion_item shortcodes. </p>
+<pre>
+	[accordion]
+		[accordion_item title="Accordion 1 Title"]
+			Accordion 1 Content
+		[/accordion_item]
+		[accordion_item title="Accordion 2 Title"]
+			Accordion 2 Content
+		[/accordion_item]
+	[/accordion]
+</pre>
+					<p>The above code shows how to add two accordions. The title attribute of each accordion_item tag refers to the title of the accordion which is used to open and close the item.</p>
+
+				</div>
+				<div style="width:50%">
+					<img src="images/shortcodeaccordion.png"/>
+				</div>
+			</div>
+					
+			<!-- Carousels -->
+			<h4>Carousel</h4>
+			<div class="row clearfix">
+				<div style="width:50%">
+					<p>The example here shows a carousel. Carousels are composed of the carousel, carousel_item and caption tags.</p>
+<pre>
+	[carousel]
+		[carousel_item]
+			IMAGE GOES HERE
+			[caption]Caption Text[/caption]
+		[/carousel_item]
+		[carousel_item]
+			IMAGE 2 GOES HERE
+			[caption]Caption 2[/caption]
+		[/carousel_item]
+	[/carousel]
+</pre>
+				<p>Each carousel item is enclosed in the carousel tags and within each carousel item will be your image and caption tags to define an image caption. Image captions however are optional.</p>
+				</div>
+				<div style="width:50%">
+					<img src="images/shortcodecarousel.png"/>
+				</div>
+			</div>
+			<br />
+			
+			<!-- Testimonials -->
+			<h4>Testimonials</h4>
+			<div class="row clearfix">
+				<div style="width: 40%">
+					<p>The example here shows a testimonial. Testimonials make the use of the testimonial tag.</p>
+<pre>
+	[testimonial name="AUTHOR_NAME" 
+		email="AUTHOR_EMAIL" 
+		company="AUTHOR_COMPANY" 
+		designation="AUTHOR_DESIGNATION"]
+		Your Testimonial Text
+	[/testimonial]
+</pre>
+				<p>The available attributes of the testimonial tag are name, email, company and designation. These are used to make up the text placed at the base of the testimonial.</p>
+				</div>
+				<div style="width: 60%">
+					<img src="images/shortcodetestimonial.png"/>
+				</div>
+			</div>
+			<br />
+					
+			<!-- Icons -->
+			<h4>Icons</h4>
+			<div class="row clearfix">
+				<div style="width:60%">
+					<p>The icon shortcode shown in the example is a single shortcode that can use multiple classes to determine which icon to display. The icons are all from <a href="http://fontawesome.io/" target="_blank">Font Awesome</a>. Please use their website for reference of all the available icons</p>
+<pre>
+	[icon name="icon-glass"][/icon]
+	[icon name="icon-heart"][/icon]
+	[icon name="icon-film"][/icon]
+	[icon name="icon-ok"][/icon]
+	[icon name="icon-off"][/icon]
+	[icon name="icon-home"][/icon]
+</pre>
+				<p>Above are an example of several icons implemented using the icon shortcode.</p>
+				</div>
+				<div style="width:40%; text-align:right;">
+					<img src="images/shortcodeicon.png"/>
+				</div>
+			</div>
+			<br />
+					
+			<!-- Other Modules -->
+			<h2>Other Modules</h2>
+			<h3>Mega Slider</h3>
+			<p>ME implements the Mega Drupal <a href="http://codecanyon.net/item/mega-slider/4313171" target="_blank">Mega Slider</a> which provides a fully featured image slideshow creation tool, that allows you to manage slides, animations, timing etc. You can create a new slider by going to "add new slider" under admin/structure/md-slider. The documentation for this module is available in the md_slider folder and you can also use the video below for reference.</p>
+			<iframe width="560" height="315" src="http://www.youtube.com/embed/G2LW6RrjhvM" frameborder="0" allowfullscreen></iframe>
+			<div class="clearfix"></div>
+			
+			<!-- Thank you -->
+			<h2>Thank you</h2>
+			<p>Thank you for purchasing the Drupal 7 Responsive ME theme. If you have any issues or feedback please contact us via our Themeforest author page.</p>
+			
+			&copy;2013 CMS Superheroes, c/o Red Fern Media Ltd, JoomEXP
+		</div>
+	<script type="text/javascript">
+		$('#toc').toc();
+	</script>
+	</body>
+</html>
